@@ -22,6 +22,11 @@ public class Game {
         initGame();
     }
 
+    /*Get winning stretch*/
+    int getWinningStretch(){
+        return winning_stretch;
+    }
+
     /*Method to set state at (row,column)*/
     public void setMove(State state, int row, int column){
         mat[row][column]= state;
@@ -66,8 +71,8 @@ public class Game {
             else
                 break;
         }
-        //going towards left
-        for(int i=row;i>=0;i--){
+        //going towards up
+        for(int i=row-1;i>=0;i--){
             if(mat[i][column]== state)
                 count++;
             else
